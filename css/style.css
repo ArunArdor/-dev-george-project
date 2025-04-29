@@ -73,3 +73,14 @@ body {
     height: 24px;
     vertical-align: middle;
 }
+
+/* By default, hide the Edit and Remove buttons */
+.list-item button {
+    display: none;
+}
+
+/* When hovering over a list item, show the buttons */
+.list-item:hover button {
+    display: inline-block;
+    margin-left: 5px; /* small spacing between text and button */
+}
