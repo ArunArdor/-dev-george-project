@@ -97,6 +97,10 @@ function confirmDelete(button) {
     }
 }
 
+function loadSampleData() {
+    document.getElementById('itemInput').value = "Sample Item 🧸";
+}
+
 function exportData() {
     const items = document.querySelectorAll('.list-item');
     const data = [];
