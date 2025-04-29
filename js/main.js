@@ -1,50 +1,7 @@
+// 🔵 1. Declare global variable
 let myData = [];
 
-$(document).ready(function() {
-    console.log("Document is ready!");
-
-    function addItem(e) {
-    e.preventDefault();
-    const input = document.getElementById('itemInput');
-    const newItem = input.value.trim();
-
-    if (newItem) {
-        const newObj = {
-            id: Date.now(),
-            item: newItem
-        };
-        myData.push(newObj); // 🔥 Push into array
-        addItemToDOM(newObj.item);
-        input.value = '';
-    }
-}
-
-
-    $('.add-form form').on('submit', addItem);
-
-    let loggedIn = false;
-
-    $('#loginForm').submit(function(e) {
-        e.preventDefault();
-        const username = $('#usernameInput').val();
-        if (username.trim() !== "") {
-            loggedIn = true;
-            $('#loginBtn').text('Logout');
-            $('#loginModal').modal('hide');
-            alert('Logged in successfully as ' + username);
-        }
-    });
-
-    $('#loginBtn').click(function() {
-        if (loggedIn) {
-            loggedIn = false;
-            $('#loginBtn').text('Login');
-            alert('You have been logged out.');
-        }
-    });
-});
-
-// 🔵 Load data from JSON
+// 🔵 2. Load data from JSON
 fetch('data/data.json')
     .then(response => response.json())
     .then(data => {
@@ -54,7 +11,22 @@ fetch('data/data.json')
         });
     });
 
-// 🔵 Functions
+// 🔵 3. Functions
+function addItem(e) {
+    e.preventDefault();
+    const input = document.getElementById('itemInput');
+    const newItem = input.value.trim();
+
+    if (newItem) {
+        const newObj = {
+            id: Date.now(),
+            item: newItem
+        };
+        myData.push(newObj);
+        addItemToDOM(newObj.item);
+        input.value = '';
+    }
+}
 
 function addItemToDOM(itemText) {
     const div = document.createElement('div');
@@ -117,3 +89,33 @@ function exportData() {
 
     console.log(JSON.stringify(data, null, 2));
 }
+
+// 🔵 4. jQuery Setup
+$(document).ready(function() {
+    console.log("Document is ready!");
+
+    // Attach submit event to form
+    $('.add-form form').on('submit', addItem);
+
+    // Dummy login behavior
+    let loggedIn = false;
+
+    $('#loginForm').submit(function(e) {
+        e.preventDefault();
+        const username = $('#usernameInput').val();
+        if (username.trim() !== "") {
+            loggedIn = true;
+            $('#loginBtn').text('Logout');
+            $('#loginModal').modal('hide');
+            alert('Logged in successfully as ' + username);
+        }
+    });
+
+    $('#loginBtn').click(function() {
+        if (loggedIn) {
+            loggedIn = false;
+            $('#loginBtn').text('Login');
+            alert('You have been logged out.');
+        }
+    });
+});
