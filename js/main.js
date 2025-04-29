@@ -1,16 +1,24 @@
+let myData = [];
+
 $(document).ready(function() {
     console.log("Document is ready!");
 
     function addItem(e) {
-        e.preventDefault();
-        const input = document.getElementById('itemInput');
-        const newItem = input.value;
+    e.preventDefault();
+    const input = document.getElementById('itemInput');
+    const newItem = input.value.trim();
 
-        if (newItem.trim()) {
-            addItemToDOM(newItem);
-            input.value = '';
-        }
+    if (newItem) {
+        const newObj = {
+            id: Date.now(),
+            item: newItem
+        };
+        myData.push(newObj); // 🔥 Push into array
+        addItemToDOM(newObj.item);
+        input.value = '';
     }
+}
+
 
     $('.add-form form').on('submit', addItem);
 
@@ -40,6 +48,7 @@ $(document).ready(function() {
 fetch('data/data.json')
     .then(response => response.json())
     .then(data => {
+        myData = data;
         data.forEach(obj => {
             addItemToDOM(obj.item);
         });
