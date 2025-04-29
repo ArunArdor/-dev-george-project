@@ -33,7 +33,7 @@ function addItemToDOM(itemText) {
     div.className = 'list-item';
 
     const span = document.createElement('span');
-    span.textContent = itemText;
+    span.innerHTML = itemText; 
     span.className = 'editable-text';
 
     const editBtn = document.createElement('button');
