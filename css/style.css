@@ -98,3 +98,6 @@ body {
     text-decoration: none;
 }
 
+#loginBtn {
+    margin-left: 20px; 
+}
