@@ -1,1 +1,75 @@
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 20px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="lightblue"/></svg>') no-repeat center center;
+    background-size: cover;
+}
 
+.header {
+    text-align: center;
+    color: darkblue;
+}
+
+.description {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: darkslategray;
+}
+
+.link-list {
+    width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid gray;
+    background-color: white;
+}
+
+.list-item {
+    padding: 8px;
+    margin: 5px;
+    background-color: #f0f0f0;
+}
+
+.add-form {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.image-container {
+    width: 500px;
+    margin: 20px auto;
+    text-align: center; 
+}
+
+.list-item img {
+    width: 20px;
+    height: 20px;
+}
+
+.seal-image {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.social-links {
+    width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
