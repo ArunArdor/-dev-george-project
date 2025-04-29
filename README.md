@@ -38,9 +38,6 @@ The app uses modern front-end techniques and libraries for better user interacti
 - Sort items alphabetically or by creation date.
 - Save new data permanently using localStorage or a back-end.
 
-## Screenshots
-- (Insert screenshots of your app here.)
-
 ## Cool Code Snippet
 ```javascript
 function exportData() {
