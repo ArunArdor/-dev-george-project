@@ -23,7 +23,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Your Initials</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -35,7 +35,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="https://github.com/ArunArdor">GitHub Profile</a></li>
           <li class="nav-item"><a class="nav-link" href="https://github.com/ArunArdor/-dev-george-project">GitHub Repo</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://validator.w3.org/">Nu Validator</a></li>
+          <li class="nav-item"><a class="https://validator.w3.org/nu/?doc=https%3A%2F%2Farunardor.github.io%2F-dev-george-project%2F">Nu Validator</a></li>
           <li class="nav-item"><a class="nav-link" href="https://wave.webaim.org/">Wave Evaluation</a></li>
           <li class="nav-item"><a class="nav-link" href="your-wireframe-link.png">Wireframe</a></li>
         </ul>
@@ -72,7 +72,7 @@
 
   <!-- Main Content -->
   <h1 class="header">My Web App🦭</h1>
-  
+  <h2 style="display:none;">Subheading placeholder for accessibility</h2>
   <p class="description">
     This web app serves as a simple interactive page where users can explore useful links, 
     view an image of our class mascot (a seal 🦭), and dynamically add new items to a list. 
@@ -88,7 +88,8 @@
   <div class="add-form">
     <form onsubmit="addItem(event)">
       <h3>Add New Item:</h3>
-      <input type="text" id="itemInput" placeholder="Type item here">
+      <label for="itemInput" class="form-label">New Item:</label>
+      <input type="text" id="itemInput" placeholder="Type item here" class="form-control">
       <button type="submit">Add</button>
       <button type="button" onclick="loadSampleData()">Load Sample</button> 
     </form>
